@@ -49,4 +49,3 @@
 * **Alexander Forero** - [Github](https://github.com/ForeroAlexander)
 * **Carolina Capote** - [Github](https://github.com/Carolinacapote)
 * **Daniel Escobar** - [Github](https://github.com/dantereto)
-holi
