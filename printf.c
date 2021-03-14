@@ -17,7 +17,7 @@ int (*get_func(char s))(va_list)
 		{NULL, NULL}
 	};
 	int i = 0;
-	while (all[i].all != '\0')
+	while (all[i].all != NULL)
 	{
 		if (s == *all[i].all)
 			return (all[i].f);
