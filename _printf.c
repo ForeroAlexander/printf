@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 					position += print_c(format, i, position);
 				else
 				{
-					position += get_func(format[i + 1])(list);
+					position += get_func(format[i + 1])(arguments_list);
 					i++;
 				}
 			}
@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 			position += print_c(format, i, position);
 		i++;
 	}
-	va_end(list);
+	va_end(arguments_list);
 	return (position);
 	return ('\n');
 }
