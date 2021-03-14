@@ -1,6 +1,7 @@
-### C - printf
+## C - printf
 
 <p align="center"><img width="250" src="https://uploads-ssl.webflow.com/5b0fe6b5acd20859e6fbac66/5b1641a1e46275621a2b436d_Holberton-Logo-final.png" alt="printf logo"></a></p>
+
 ## Project Requirements
 * All files will be compiled on Ubuntu 14.04 LTS
 * Programs and functions will be compiled with gcc 4.8.4 using flags -Wall -Werror -Wextra and -pedantic
