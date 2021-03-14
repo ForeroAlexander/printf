@@ -2,41 +2,31 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- * _printf - printf.
- *@format: the number
- *Return: return 0
+ * print_c - Function that prints the text in the format part.
+ * @format: Pointer to a string that gives the format to be printed.
+ * @i: Actual position in format.
+ * @position: Iterates on format.
+ *Return: Always 0.
  */
-int (*get_func(char s))(va_list)
-{
-	all_t all[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_number},
-		{"r", print_rev},
-		{"i", print_int},
-		{NULL, NULL}
-	};
-	int i = 0;
-	while (all[i].all != NULL)
-	{
-		if (s == *all[i].all)
-			return (all[i].f);
-		i++;
-	}
-	return ('\0');
-}
 int print_c(const char *format, int i, int position)
 {
 	char c = format[i];
-	write (1, &c, 1);
+
+	write(1, &c, 1);
 	position++;
 	return (position);
 }
+/**
+ * _printf - Function that prints diferent formats.
+ * @format: Pointer to a string that gives the format to be printed.
+ *Return: Always 0.
+ */
 int _printf(const char *format, ...)
 {
-	va_list list;
+	va_list arguments_list;
 	int i = 0, position = 0;
-	va_start(list, format);
+
+	va_start(arguments_list, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
