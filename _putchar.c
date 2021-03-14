@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include "holberton.h"
 /**
- * _putchar - writes the character c
+ * _putchar - writes the character c.
  * @c: The character to print
  *
  * Return: On success 1.
