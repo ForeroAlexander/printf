@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] != '%')
 			{
 				if (!get_func(format[i + 1]))
-					position += print_c(format, i, position);
+					position = print_c(format, i, position);
 				else
 				{
 					position += get_func(format[i + 1])(arguments_list);
@@ -45,12 +45,12 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				position += print_c(format, i, position);
+				position = print_c(format, i, position);
 				i++;
 			}
 		}
 		else
-			position += print_c(format, i, position);
+			position = print_c(format, i, position);
 		i++;
 	}
 	va_end(arguments_list);
