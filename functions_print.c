@@ -24,38 +24,14 @@ int print_string(va_list arguments_list)
 	char *str = va_arg(arguments_list, char *);
 	char *strNULL = "(null)";
 
-<<<<<<< HEAD
-	while (str[i] != '\0')
-	{
-		_putchar(str[i]);
-		i++;
-	}
-	return (0);
-}
-/**
- * print_number - Function that prints numbers.
- * @arguments_list: Variable argument list.
- * Return: Always 0.
- */
-int print_number(va_list arguments_list)
-{
-	int number = va_arg(arguments_list, int);
-
-	if (number < 0)
-	{
-		_putchar('-');
-		number = number * -1;
-		print_i(number);
-	}
-=======
 	if (str == NULL)
 		for (i = 0; strNULL[i] != '\0'; i++)
 			_putchar(strNULL[i]);
->>>>>>> a1a23dfe2b66fcfa901930e8cb25a0c5791ed0c7
 	else
-		for (i = 0; str[i] != '\0'; i++)
-		_putchar(str[i]);
-
+	{
+		for (i = 0; str[i] != 0; i++)
+			_putchar(str[i]);
+	}
 	return (i);
 }
 /**
