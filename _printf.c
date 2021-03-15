@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	int (*z)(va_list);
 
 	va_start(arguments_list, format);
+	if (format == NULL)
+		return (-1);
 
 	if (format != NULL)
 	{
