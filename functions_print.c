@@ -35,7 +35,7 @@ int print_string(va_list arguments_list)
 	return (i);
 }
 /**
- * _rev - Function that prints a string in reverse.
+ * print_rev - Function that prints a string in reverse.
  * @arguments_list: Variable argument list.
  * Return: Always 0.
  */
@@ -56,7 +56,7 @@ int print_rev(va_list arguments_list)
 }
 /**
  * print_porc - function that prints %
- * @list: arguments.
+ * @arguments_list: arguments.
  * Return: 0.
  */
 int print_porc(va_list arguments_list)
@@ -64,4 +64,5 @@ int print_porc(va_list arguments_list)
 	(void)arguments_list;
 	_putchar('%');
 	return (1);
+
 }
