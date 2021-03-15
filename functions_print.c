@@ -69,9 +69,13 @@ int print_porc(va_list arguments_list)
 int print_bin(va_list arguments_list)
 {
   unsigned int n = va_arg(arguments_list, unsigned int);
-  int a[10],i; 
+  int a[1024],i; 
   char p;
-  for(i=0;n>0;i++)    
+  if (n < 1)
+    {
+      write(1, "0", 1);
+    }
+  for(i = 0;n > 0; i++)    
     {    
       a[i]= n % 2;    
       n = n / 2;    
