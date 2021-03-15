@@ -24,7 +24,5 @@ int print_string(va_list arguments_list);
 int _putchar(char c);
 int print_digit(va_list arguments_list);
 int print_rev(va_list arguments_list);
-/*int print_integer(va_list arguments_list);
-  int print_i(int n);*/
 
 #endif
