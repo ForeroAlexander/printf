@@ -3,7 +3,7 @@
 /**
  * get_func - Function to find the function to be used.
  * @s: Char to find an specific letter or symbol.
- * Return: Always 0.
+ * Return: NULL.
  */
 int (*get_func(char s))(va_list a)
 {
