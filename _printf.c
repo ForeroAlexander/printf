@@ -41,6 +41,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(arguments_list);
-	return (position);
 	return (i);
 }
