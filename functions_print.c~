@@ -3,7 +3,7 @@
 #include <unistd.h>
 /**
  * print_char - Function that prints characters.
- * @arguments_list: Variable argument list.
+ * @va_list: Variable argument list.
  * Return: Always 0.
  */
 int print_char(va_list arguments_list)
@@ -15,7 +15,7 @@ int print_char(va_list arguments_list)
 }
 /**
  * print_string - Function that prints strings.
- * @arguments_list: Variable argument list.
+ * @va_list: Variable argument list.
  * Return: Always 0.
  */
 int print_string(va_list arguments_list)
@@ -23,6 +23,8 @@ int print_string(va_list arguments_list)
 	char *str = va_arg(arguments_list, char *);
 	int i = 0;
 
+	if (str == NULL)
+		str = "(nil)";
 	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
@@ -32,7 +34,7 @@ int print_string(va_list arguments_list)
 }
 /**
  * print_number - Function that prints numbers.
- * @arguments_list: Variable argument list.
+ * @va_list: Variable argument list.
  * Return: Always 0.
  */
 int print_number(va_list arguments_list)
@@ -51,7 +53,7 @@ int print_number(va_list arguments_list)
 }
 /**
  * print_integer - Function that prints integers.
- * @arguments_list: Variable argument list.
+ * @va_list: Variable argument list.
  * Return: Always 0.
  */
 int print_integer(va_list arguments_list)
@@ -70,7 +72,7 @@ int print_integer(va_list arguments_list)
 }
 /**
  * print_rev - Function that prints a string in reverse.
- * @arguments_list: Variable argument list.
+ * @va_list: Variable argument list.
  * Return: Always 0.
  */
 int print_rev(va_list arguments_list)
