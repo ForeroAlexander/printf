@@ -5,23 +5,22 @@
  * @s: Char to find an specific letter or symbol.
  * Return: Always 0.
  */
-int (*get_func(char s))(va_list)
+int (*get_func(char s))(va_list a)
 {
-	all_t all[] = {
+	int j;
+	all_t prn[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"%", print_porc},
 		{"d", print_digit},
 		{"i", print_digit},
 		{"r", print_rev},
 		{NULL, NULL}
 	};
-	int i = 0;
-
-	while (all[i].all != '\0')
-	{
-		if (s == *all[i].all)
-			return (all[i].f);
-		i++;
+	for(j = 0; prn[j].all != '\0'; j++)
+        {
+		if (prn[j].all[0] == s)
+			return (prn[j].f);
 	}
-	return ('\0');
+	return (NULL);
 }

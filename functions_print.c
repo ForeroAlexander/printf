@@ -52,3 +52,14 @@ int print_rev(va_list arguments_list)
 	}
 	return (0);
 }
+/**
+ * print_porc - function that prints %
+ * @list: arguments.
+ * Return: 0.
+ */
+int print_porc(va_list arguments_list)
+{
+	(void)arguments_list;
+	_putchar('%');
+	return (1);
+}
