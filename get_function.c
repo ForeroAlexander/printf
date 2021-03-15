@@ -10,8 +10,8 @@ int (*get_func(char s))(va_list)
 	all_t all[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"d", print_number},
-		{"i", print_integer},
+		{"d", print_digit},
+		{"i", print_digit},
 		{"r", print_rev},
 		{NULL, NULL}
 	};

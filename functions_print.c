@@ -33,45 +33,7 @@ int print_string(va_list arguments_list)
 	return (i);
 }
 /**
- * print_number - Function that prints numbers.
- * @arguments_list: Variable argument list.
- * Return: Always 0.
- */
-int print_number(va_list arguments_list)
-{
-	int number = va_arg(arguments_list, int);
-
-	if (number < 0)
-	{
-		_putchar('-');
-		number = number * -1;
-		print_i(number);
-	}
-	else
-		print_i(number);
-	return (0);
-}
-/**
- * print_integer - Function that prints integers.
- * @arguments_list: Variable argument list.
- * Return: Always 0.
- */
-int print_integer(va_list arguments_list)
-{
-	int number = va_arg(arguments_list, int);
-
-	if (number < 0)
-	{
-		_putchar('-');
-		number = number * -1;
-		print_i(number);
-	}
-	else
-		print_i(number);
-	return (0);
-}
-/**
- * print_rev - Function that prints a string in reverse.
+ * _rev - Function that prints a string in reverse.
  * @arguments_list: Variable argument list.
  * Return: Always 0.
  */

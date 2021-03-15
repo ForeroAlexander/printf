@@ -1,15 +1,44 @@
 #include "holberton.h"
 /**
- * print_i - Auxiliar function to print numbers-Integers.
- * @n: Number to be printed.
- * Return: Always 0.
+ * print_digit - funtion that prints a digit.
+ * @list: arguments.
+ * Return: 0.
  */
-int print_i(int n)
+int print_digit(va_list list)
 {
-	if (n / 10 != 0)
-	{
-		print_i(n / 10);
-	}
-	_putchar((n % 10) + '0');
-	return (0);
+        int arg = va_arg(list, int);
+        int i;
+
+        i = aux(arg);
+        return (i);
+}
+
+/**
+ * aux - auxiliar recursive function
+ * @arg: is an integer
+ * Return: index
+ */
+int aux(int arg)
+{
+        int i;
+        unsigned int number;
+
+        i = 0;
+        number = arg;
+        if (arg < 0)
+        {
+                i += _putchar('-');
+                number = -number;
+        }
+        if (number == 0)
+        {
+                i += _putchar('0');
+                return (i);
+        }
+
+        if (number / 10)
+                i += aux(number /  10);
+
+        i += _putchar(number % 10 + '0');
+        return (i);
 }
