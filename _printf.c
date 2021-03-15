@@ -2,22 +2,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- * print_c - Function that prints the text in the format part.
- * @format: Pointer to a string that gives the format to be printed.
- * @i: Actual position in format.
- * @position: Iterates on format.
- *Return: Always 0.
- */
-int print_c(const char *format, int i, int position)
-{
-	char c = format[i];
-
-	write(1, &c, 1);
-	position++;
-	return (position);
-}
-/**
- * _printf - funtion that print.
+ *_printf - funtion that print.
  * @format: const char type.
  * Return: Number of digits.
  */

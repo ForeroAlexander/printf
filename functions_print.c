@@ -20,16 +20,17 @@ int print_char(va_list arguments_list)
  */
 int print_string(va_list arguments_list)
 {
+	int i;
 	char *str = va_arg(arguments_list, char *);
-	int i = 0;
+	char *strNULL = "(null)";
 
 	if (str == NULL)
-		str = "(nil)";
-	while (str[i] != '\0')
-	{
+		for (i = 0; strNULL[i] != '\0'; i++)
+			_putchar(strNULL[i]);
+	else
+		for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
-		i++;
-	}
+
 	return (i);
 }
 /**
