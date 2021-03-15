@@ -11,7 +11,7 @@ int print_char(va_list arguments_list)
 	int str = va_arg(arguments_list, int);
 
 	_putchar(str);
-	return (0);
+	return (1);
 }
 /**
  * print_string - Function that prints strings.
@@ -30,7 +30,7 @@ int print_string(va_list arguments_list)
 		_putchar(str[i]);
 		i++;
 	}
-	return (0);
+	return (i);
 }
 /**
  * print_number - Function that prints numbers.
