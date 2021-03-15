@@ -41,9 +41,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(arguments_list);
-<<<<<<< HEAD
 	return (position);
-=======
 	return (i);
->>>>>>> a1a23dfe2b66fcfa901930e8cb25a0c5791ed0c7
 }
