@@ -41,11 +41,11 @@ int print_string(va_list arguments_list)
  */
 int print_rev(va_list arguments_list)
 {
-	int i, j;
+	unsigned int i, j;
 	char *str = va_arg(arguments_list, char *);
 
-	if (str == '\0')
-		str = "(nil)";
+	if (str == NULL)
+		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
 		;
 	for (j = 0; i > 0; j++, i--)
@@ -65,4 +65,21 @@ int print_porc(va_list arguments_list)
 	_putchar('%');
 	return (1);
 
+}
+int print_bin(va_list arguments_list)
+{
+  unsigned int n = va_arg(arguments_list, unsigned int);
+  int a[10],i; 
+  char p;
+  for(i=0;n>0;i++)    
+    {    
+      a[i]= n % 2;    
+      n = n / 2;    
+    }    
+  for(i = i - 1; i >= 0; i--)    
+    {    
+      p = a[i] + '0';
+      _putchar(p);
+    }    
+  return (0);
 }
