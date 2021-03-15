@@ -52,7 +52,7 @@ int print_rev(va_list arguments_list)
 	{
 		_putchar(str[i - 1]);
 	}
-	return (0);
+	return (i);
 }
 /**
  * print_porc - function that prints %
