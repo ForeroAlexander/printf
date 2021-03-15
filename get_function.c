@@ -17,8 +17,9 @@ int (*get_func(char s))(va_list a)
 		{"r", print_rev},
 		{NULL, NULL}
 	};
-	for(j = 0; prn[j].all != '\0'; j++)
-        {
+
+	for (j = 0; prn[j].all != '\0'; j++)
+	{
 		if (prn[j].all[0] == s)
 			return (prn[j].f);
 	}
