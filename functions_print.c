@@ -11,7 +11,7 @@ int print_char(va_list arguments_list)
 	int str = va_arg(arguments_list, int);
 
 	_putchar(str);
-	return (0);
+	return (1);
 }
 /**
  * print_string - Function that prints strings.
@@ -20,9 +20,11 @@ int print_char(va_list arguments_list)
  */
 int print_string(va_list arguments_list)
 {
+	int i;
 	char *str = va_arg(arguments_list, char *);
-	int i = 0;
+	char *strNULL = "(null)";
 
+<<<<<<< HEAD
 	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
@@ -45,31 +47,19 @@ int print_number(va_list arguments_list)
 		number = number * -1;
 		print_i(number);
 	}
+=======
+	if (str == NULL)
+		for (i = 0; strNULL[i] != '\0'; i++)
+			_putchar(strNULL[i]);
+>>>>>>> a1a23dfe2b66fcfa901930e8cb25a0c5791ed0c7
 	else
-		print_i(number);
-	return (0);
-}
-/**
- * print_integer - Function that prints integers.
- * @arguments_list: Variable argument list.
- * Return: Always 0.
- */
-int print_integer(va_list arguments_list)
-{
-	int number = va_arg(arguments_list, int);
+		for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
 
-	if (number < 0)
-	{
-		_putchar('-');
-		number = number * -1;
-		print_i(number);
-	}
-	else
-		print_i(number);
-	return (0);
+	return (i);
 }
 /**
- * print_rev - Function that prints a string in reverse.
+ * _rev - Function that prints a string in reverse.
  * @arguments_list: Variable argument list.
  * Return: Always 0.
  */
@@ -87,4 +77,15 @@ int print_rev(va_list arguments_list)
 		_putchar(str[i - 1]);
 	}
 	return (0);
+}
+/**
+ * print_porc - function that prints %
+ * @list: arguments.
+ * Return: 0.
+ */
+int print_porc(va_list arguments_list)
+{
+	(void)arguments_list;
+	_putchar('%');
+	return (1);
 }

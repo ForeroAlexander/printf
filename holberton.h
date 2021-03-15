@@ -13,17 +13,17 @@
 typedef struct all
 {
 	char *all;
-	int (*f)();
+	int (*f)(va_list x);
 } all_t;
 
-int (*get_func(char s))(va_list);
+int _putchar(char c);
+int aux(int arg);
+int (*get_func(char s))(va_list a);
 int _printf(const char *format, ...);
 int print_char(va_list arguments_list);
 int print_string(va_list arguments_list);
-int _putchar(char c);
-int print_number(va_list arguments_list);
+int print_porc(va_list arguments_list);
+int print_digit(va_list arguments_list);
 int print_rev(va_list arguments_list);
-int print_integer(va_list arguments_list);
-int print_i(int n);
 
 #endif
