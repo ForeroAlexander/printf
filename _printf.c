@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 	int i = 0, position = 0;
 
 	va_start(arguments_list, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != '\0')
 	{
 		if (format[i] == '%')
 		{
@@ -55,5 +55,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(arguments_list);
 	return (position);
-	return ('\n');
 }
