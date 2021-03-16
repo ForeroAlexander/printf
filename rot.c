@@ -2,6 +2,14 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <math.h>
+
+/**
+ * print_rot - pintf to rot13
+ * @argument_list: arguments variadi
+ * Return: amount n prints
+ */
+
 int print_rot(va_list arguments_list)
 {
 	char *s;
@@ -30,11 +38,18 @@ int print_rot(va_list arguments_list)
 	}
 	return (count - 2);
 }
+
+/**
+ *
+ *
+ *
+ */
 int print_oct(va_list arguments_list)
 {
 	unsigned int n = va_arg(arguments_list, unsigned int);
-	int a[1024],i;
+	int a[1024], i;
 	char p;
+
 	if (n < 1)
     {
       write(1, "0", 1);
@@ -51,7 +66,11 @@ int print_oct(va_list arguments_list)
 	}
 	return (0);
 }
-
+/**
+ *
+ *
+ *
+ */
 int print_hex(va_list arguments_list)
 {
 	unsigned int n = va_arg(arguments_list, unsigned int);
