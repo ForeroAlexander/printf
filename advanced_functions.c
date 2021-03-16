@@ -20,7 +20,7 @@ int print_rot(va_list arguments_list)
 		len++;
 	cpy = malloc(sizeof(char) * (len + 1));
 	if (cpy == '\0')
-	  return ('\0');
+		return ('\0');
 	for (i = 0; i <= len; i++)
 	{
 		cpy[i] = string[i];
@@ -76,12 +76,13 @@ int print_oct(va_list arguments_list)
 int print_hex(va_list arguments_list)
 {
 	unsigned int n = va_arg(arguments_list, unsigned int);
-	unsigned int a[1024]; 
+	unsigned int a[1024];
 	int i = 0, temp = 0;
 	char p;
+
 	if (n < 1)
 	{
-	  write(1, "0", 1);
+		write(1, "0", 1);
 		return (1);
 	}
 	for (i = 0; n > 0; i++, temp++)
@@ -100,33 +101,38 @@ int print_hex(va_list arguments_list)
 	}
 	return (temp);
 }
+/**
+  * print_heX - Function that printsin hexadecimal form in uppercase.
+  * @arguments_list: Arguments that the function receives.
+  * Return: temp.
+  */
 int print_heX(va_list arguments_list)
 {
-  unsigned int n = va_arg(arguments_list, unsigned int);
-  int a[1024], i = 0, temp = 0;
-  char p;
+	unsigned int n = va_arg(arguments_list, unsigned int);
+	int a[1024], i = 0, temp = 0;
+	char p;
 
-  if (n < 1)
-    {
-      write(1, "0", 1);
-      return (1);
-    }
-  for (i = 0; n > 0; i++)
-    {
-      a[temp] = n % 16;
-      n = n / 16;
-      if (a[i] > 10)
-	a[i] = a[temp] + 7;
-      else
+	if (n < 1)
 	{
-	  a[i] = a[temp];
+		write(1, "0", 1);
+		return (1);
 	}
-      temp++;
-    }
-  for (i = temp - 1; i >= 0; i--)
-    {
-      p = a[i] + '0';
-      _putchar(p);
-    }
-  return (temp);
+	for (i = 0; n > 0; i++)
+	{
+		a[temp] = n % 16;
+		n = n / 16;
+		if (a[i] > 10)
+			a[i] = a[temp] + 7;
+		else
+		{
+			a[i] = a[temp];
+		}
+		temp++;
+	}
+	for (i = temp - 1; i >= 0; i--)
+	{
+		p = a[i] + '0';
+		_putchar(p);
+	}
+	return (temp);
 }
