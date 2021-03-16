@@ -19,6 +19,8 @@ int print_rot(va_list arguments_list)
 	for (i = 0; string[i] != '\0'; i++)
 		len++;
 	cpy = malloc(sizeof(char) * (len + 1));
+	if (cpy == '\0')
+	  return ('\0');
 	for (i = 0; i <= len; i++)
 	{
 		cpy[i] = string[i];
@@ -40,6 +42,7 @@ int print_rot(va_list arguments_list)
 		_putchar(cpy[i]);
 		i++;
 	}
+	free(cpy);
 	return (len);
 }
 /**
