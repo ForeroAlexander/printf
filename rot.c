@@ -35,3 +35,55 @@ int print_rot(va_list arguments_list)
     }
   return (len);
 }
+int print_oct(va_list arguments_list)
+{
+  unsigned int n = va_arg(arguments_list, unsigned int);
+  int a[1024],i; 
+  char p;
+  if (n < 1)
+    {
+      write(1, "0", 1);
+    }
+  for(i = 0;n > 0; i++)    
+    {    
+      a[i]= n % 8;    
+      n = n / 8;    
+    }    
+  for(i = i - 1; i >= 0; i--)    
+    {    
+      p = a[i] + '0';
+      _putchar(p);
+    }    
+  return (0);
+}
+int print_hex(va_list arguments_list)
+{
+  unsigned int n = va_arg(arguments_list, unsigned int);
+  int a[1024],i, len; 
+  char p;
+  if (n < 1)
+    {
+      write(1, "0", 1);
+    }
+  for(i = 0;n > 0; i++)    
+    {    
+      a[len]= n % 16;
+      n = n / 16;
+      if(a[i] < 9) 
+	{ 
+	  a[i] = a[len] + 39; 
+	} 
+      else 
+	{ 
+	  a[i] = a[len]; 
+	} 
+      i++;
+      len++;  
+    }    
+  for(i = len - 1; i >= 0; i--)    
+    {    
+      p = a[i] + '0';
+      _putchar(p);
+    }    
+  return (len);
+}
