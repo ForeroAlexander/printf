@@ -3,13 +3,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <math.h>
-
 /**
  * print_rot - pintf to rot13
- * @argument_list: arguments variadi
+ * @arguments_list: arguments variadi
  * Return: amount n prints
  */
-
 int print_rot(va_list arguments_list)
 {
 	int i = 0, cop = 0, len = 0;
@@ -44,7 +42,11 @@ int print_rot(va_list arguments_list)
 	}
 	return (len);
 }
-
+/**
+ * print_oct - Function that prints octal numbers.
+ * @arguments_list: argument.
+ * Return: amount n prints.
+ */
 int print_oct(va_list arguments_list)
 {
 	unsigned int n, i;
@@ -66,24 +68,25 @@ int print_oct(va_list arguments_list)
 	return (i - 2);
 }
 /**
- *
- *
- *
+ * print_hex - Function that prints hexadecimal numbers.
+ * @arguments_list: Arguments.
+ * Return: len.
  */
 int print_hex(va_list arguments_list)
 {
 	unsigned int n = va_arg(arguments_list, unsigned int);
-	int a[1024],i, len;
+	int a[1024], i, len;
 	char p;
+
 	if (n < 1)
 	{
 		write(1, "0", 1);
 	}
-	for(i = 0;n > 0; i++)
+	for (i = 0; n > 0; i++)
 	{
-		a[len]= n % 16;
+		a[len] = n % 16;
 		n = n / 16;
-		if(a[i] < 9)
+		if (a[i] < 9)
 		{
 			a[i] = a[len] + 39;
 		}
@@ -94,7 +97,7 @@ int print_hex(va_list arguments_list)
 		i++;
 		len++;
 	}
-	for(i = len - 1; i >= 0; i--)
+	for (i = len - 1; i >= 0; i--)
 	{
 		p = a[i] + '0';
 		_putchar(p);
