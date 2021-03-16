@@ -12,59 +12,58 @@
 
 int print_rot(va_list arguments_list)
 {
-	char *s;
-	char *A = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *R = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int i, j, count = 0;
+	int i = 0, cop = 0, len = 0;
+	char rot[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char num[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *cpy;
+	char *string = va_arg(arguments_list, char *);
 
-	s = va_arg(arguments_list, char *);
-	i = 0;
-	while (s[i])
+	for (i = 0; string[i] != '\0'; i++)
+		len++;
+	cpy = malloc(sizeof(char) * (len + 1));
+	for (i = 0; i <= len; i++)
 	{
-		count++;
-		j = 0;
-		while (A[j])
+		cpy[i] = string[i];
+	}
+	for (i = 0; cpy[i]; i++)
+	{
+		for (cop = 0; rot[cop]; cop++)
 		{
-			if (s[i] == A[j])
+			if (cpy[i] == rot[cop])
 			{
-				_putchar(R[j]);
+				cpy[i] = num[cop];
 				break;
 			}
-			if (A[j + 1] == '\0')
-				_putchar(s[i]);
-			j++;
 		}
+	}
+	i = 0;
+	while (cpy[i] != '\0')
+	{
+		_putchar(cpy[i]);
 		i++;
 	}
-	return (count - 2);
+	return (len);
 }
 
-/**
- *
- *
- *
- */
 int print_oct(va_list arguments_list)
 {
-	unsigned int n = va_arg(arguments_list, unsigned int);
-	int a[1024], i;
-	char p;
+	unsigned int n, i;
+	int j;
+	int octalNum[1000];
 
-	if (n < 1)
-    {
-      write(1, "0", 1);
-    }
-	for(i = 0;n > 0; i++)
+	n = va_arg(arguments_list, int);
+
+	i = 0;
+	while (n != 0)
 	{
-		a[i]= n % 8;
+		octalNum[i] = n % 8;
 		n = n / 8;
+		i++;
 	}
-	for(i = i - 1; i >= 0; i--)
-	{
-		p = a[i] + '0';
-		_putchar(p);
-	}
-	return (0);
+	for (j = i - 1; j >= 0; j--)
+		_putchar(octalNum[j] + '0');
+
+	return (i - 2);
 }
 /**
  *
