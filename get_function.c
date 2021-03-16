@@ -19,6 +19,7 @@ int (*get_func(char s))(va_list a)
 		{"R", print_rot},
 		{"o", print_oct},
 		{"x", print_hex},
+		{"X", print_heX},
 		{NULL, NULL}
 	};
 

@@ -54,7 +54,7 @@ int print_oct(va_list arguments_list)
 {
 	unsigned int n, i;
 	int j;
-	int octalNum[1000];
+	int octalNum[1024];
 
 	n = va_arg(arguments_list, int);
 	i = 0;
@@ -76,30 +76,57 @@ int print_oct(va_list arguments_list)
 int print_hex(va_list arguments_list)
 {
 	unsigned int n = va_arg(arguments_list, unsigned int);
-	int a[1024], i, len;
+	unsigned int a[1024]; 
+	int i = 0, temp = 0;
 	char p;
-
 	if (n < 1)
 	{
-		write(1, "0", 1);
+	  write(1, "0", 1);
+		return (1);
 	}
-	for (i = 0; n > 0; i++)
+	for (i = 0; n > 0; i++, temp++)
 	{
-		a[len] = n % 16;
+		a[temp] = n % 16;
 		n = n / 16;
-		if (a[i] < 9)
-			a[i] = a[len] + 39;
+		if (a[temp] > 10)
+			a[i] = a[temp] + 39;
 		else
-		{
-			a[i] = a[len];
-		}
-		i++;
-		len++;
+			a[i] = a[temp];
 	}
-	for (i = len - 1; i >= 0; i--)
+	for (i = temp - 1; i >= 0; i--)
 	{
 		p = a[i] + '0';
 		_putchar(p);
 	}
-	return (len);
+	return (temp);
+}
+int print_heX(va_list arguments_list)
+{
+  unsigned int n = va_arg(arguments_list, unsigned int);
+  int a[1024], i = 0, temp = 0;
+  char p;
+
+  if (n < 1)
+    {
+      write(1, "0", 1);
+      return (1);
+    }
+  for (i = 0; n > 0; i++)
+    {
+      a[temp] = n % 16;
+      n = n / 16;
+      if (a[i] > 10)
+	a[i] = a[temp] + 7;
+      else
+	{
+	  a[i] = a[temp];
+	}
+      temp++;
+    }
+  for (i = temp - 1; i >= 0; i--)
+    {
+      p = a[i] + '0';
+      _putchar(p);
+    }
+  return (temp);
 }
