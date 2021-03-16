@@ -37,7 +37,7 @@ int print_string(va_list arguments_list)
 /**
  * print_rev - Function that prints a string in reverse.
  * @arguments_list: Variable argument list.
- * Return: Always 0.
+ * Return: String.
  */
 int print_rev(va_list arguments_list)
 {
