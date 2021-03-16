@@ -83,6 +83,7 @@ int print_bin(va_list arguments_list)
 	if (n < 1)
 	{
 		write(1, "0", 1);
+		return (1);
 	}
 	for (i = 0; n > 0; i++)
 	{
@@ -94,5 +95,5 @@ int print_bin(va_list arguments_list)
 		p = a[i] + '0';
 		_putchar(p);
 	}
-	return (0);
+	return (i);
 }
