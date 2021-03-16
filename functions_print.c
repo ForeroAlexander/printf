@@ -41,21 +41,22 @@ int print_string(va_list arguments_list)
  */
 int print_rev(va_list arguments_list)
 {
-	int a;
+  int i , a;
 
-	char *arg;
+	char *str;
 
-	arg = va_arg(arguments_list, char *);
-
-	for (a = 0; arg[a] != '\0'; a++)
+	str = va_arg(arguments_list, char *);
+	if (str == NULL)
+	  str = "(null)";
+	for (a = 0; str[a] != '\0'; a++)
 	{
 	}
 	a--;
-	while (arg[a] != 0)
-	{
-		_putchar(arg[a]);
-		a--;
-	}
+	for (i = 0; a > 0; i++)
+	  {
+	    _putchar(str[a - 1]);
+	    a--;
+	  }
 	return (0);
 }
 /**
