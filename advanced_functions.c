@@ -40,7 +40,6 @@ int print_rot(va_list arguments_list)
 		_putchar(cpy[i]);
 		i++;
 	}
-	free(cpy);
 	return (len);
 }
 /**
