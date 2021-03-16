@@ -76,7 +76,7 @@ int print_porc(va_list arguments_list)
  */
 int print_bin(va_list arguments_list)
 {
-	int n = va_arg(arguments_list, int);
+	unsigned int n = va_arg(arguments_list, unsigned int);
 	unsigned int a[1024];
 	int size, i;
 	char p;
