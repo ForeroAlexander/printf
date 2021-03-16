@@ -41,21 +41,25 @@ int print_string(va_list arguments_list)
  */
 int print_rev(va_list arguments_list)
 {
-	unsigned int i, j;
-	char *str = va_arg(arguments_list, char *);
+	int a;
 
-	if (str == NULL)
-		str = "(null)";
-	for (i = 0; str[i] != '\0'; i++)
-		;
-	for (j = 0; i > 0; j++, i--)
+	char *arg;
+
+	arg = va_arg(arguments_list, char *);
+
+	for (a = 0; arg[a] != '\0'; a++)
 	{
-		_putchar(str[i - 1]);
 	}
-	return (i);
+	a--;
+	while (arg[a] != 0)
+	{
+		_putchar(arg[a]);
+		a--;
+	}
+	return (0);
 }
 /**
- * print_porc - function that prints %
+ * _porc - function that prints %
  * @arguments_list: arguments.
  * Return: 0.
  */
@@ -68,22 +72,22 @@ int print_porc(va_list arguments_list)
 }
 int print_bin(va_list arguments_list)
 {
-  unsigned int n = va_arg(arguments_list, unsigned int);
-  int a[1024],i; 
-  char p;
-  if (n < 1)
-    {
-      write(1, "0", 1);
-    }
-  for(i = 0;n > 0; i++)    
-    {    
-      a[i]= n % 2;    
-      n = n / 2;    
-    }    
-  for(i = i - 1; i >= 0; i--)    
-    {    
-      p = a[i] + '0';
-      _putchar(p);
-    }    
-  return (0);
+	unsigned int n = va_arg(arguments_list, unsigned int);
+	int a[1024],i;
+	char p;
+	if (n < 1)
+	{
+		write(1, "0", 1);
+	}
+	for(i = 0;n > 0; i++)
+	{
+		a[i]= n % 2;
+		n = n / 2;
+	}
+	for(i = i - 1; i >= 0; i--)
+	{
+		p = a[i] + '0';
+		_putchar(p);
+	}
+	return (0);
 }
