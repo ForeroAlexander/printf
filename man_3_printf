@@ -1,78 +1,94 @@
-.TH man 3 "15 march 2021" "1.0" "_printf man page"
-.SH NAME
-.br
-.B _printf
-- print data
-.br
-.SH SYNOPSIS
-.br
-int _printf(const char *format, ...);
+.\" Manpage.
+.\" To correct errors or typs.
+.TH man 3 "15 march 20201" "Holberton School 0x11. C - _printf"
 
+.SH NAME
+_printf() - takes input and prints to standard output.
+
+.SH SYNOPSIS
 #include "holberton.h"
-.PP
-.B int _printf(const char *format, ...);
-.PP
-.B int _puts(char *str);
-.PP
-.B int _putchar(char c);
-.br
-.PP
-.B int printf_char(va_list arguments_list);
-.PP
-.B int printf_string(va_list arguments_List);
-.PP
-.B int printf_porc(va_list arguments_list)
-.PP
-.B int printf_digit(va_list arguments_list);
-.PP
-.B int printf_rev(va_list arguments_list);
-.PP
-.B int printf_bin(va_list arguments_list);
-.PP
-.B int printf_rot(va_list arguments_list);
-.PP
-.B int printf_uns(va_list arguments_list);
-.PP
-.B int printf_oct(va_list arguments_list);
-.PP
-.B int printf_hex(va_list arguments_list);
-.br
+
+.SH Sintaxis
+int _printf(const char *format, ...)
+
+.SH format
+This is the string that contains the text to be written to stdout. 
+#include <stdarg.h>
+
 .SH DESCRIPTION
-.br
-_printf() produce output according to a format, write output to stdout.
-.br
-.SH OPTIONS
-.br
-.B Characters
-.PP
-_printf("Character with _print:[%c][%c][%c][%c]\n", 'H', 'o', 'l', 'b');
-.PP
-.I Output:
-Holb
-.PP
-.B Strings
-.PP
-_printf("String:[%s]\n", "Hello, Holberton!");
-.PP
-.I Output:
-Hello, Holberton
-.PP
-.B Decimal and Integers
-.PP
-_printf("Actual: %i\n", INT_MIN);
-_printf("Actual: %i\n", INT_MAX);
-.I Output:
--2147483648
-+2147483647
-.br
+The function _printf() sends formatted output to stdout and uses format
+specifiers to convert arguments into strings. The format specifiers are:
+FORMAT outputs a specified format relative to the specifier input.
+
+.SH Return Value
+_printf() function returns the number of characters printed (excluding the null byte used to end output to strings).
+
+.B %c
+Prints the character passed as parameter
+
+.B %s
+Prints text string finished with null character.
+
+.B %%
+Prints a single '%' character
+
+.B %d
+Converts argument to signed decimal notation and print it.
+
+.B %i
+Converts argument to unsigned decimal notation and print it.
+
+.B %b
+Convert the unsigned argument to a binary and print it.
+
+.B %u
+Prints the integer unsigned decimal conversion.
+
+.B %o
+Prints the integer unsigned octal conversion.
+
+.B %x
+Unsigned hexadecimal conversion in lowercase form.
+
+.B %X
+Unsigned hexadecimal conversion uppercase  form.	
+
+.B %p
+Prints a memory address (Pointer).
+
+.SH EXAMPLE
+
+.RS
+#include "holberton.h"
+
+int main(void)
+
+{
+
+
+    _printf("%s", String);
+
+
+   _printf("I am a character %s", 'A');
+
+
+   _printf("I am an integer %s", 12);
+
+
+   _printf("I am percentage %%", %);
+
+
+    return (0);
+
+
+}
+.RE
+
 .SH SEE ALSO
-.br
-.I printf(3), puts(3), putchar(3)
-.br
+printf(3)
+
 .SH BUGS
-.br
-for now the function _printf don?t handle the flag characters, field width, precision, and length modifiers 
-.br
+No known bugs.
+
 .SH AUTHOR
-.br
-Alexander Forero, Carolina Capote, Daniel Escobar
+Alexander Forero, Daniel Escobar and Carolina Capote
