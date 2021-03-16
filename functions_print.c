@@ -78,7 +78,7 @@ int print_bin(va_list arguments_list)
 {
 	unsigned int n = va_arg(arguments_list, unsigned int);
 	unsigned int a[1024];
-	int size, i;
+	int size = 0, i = 0;
 	char p;
 
 	if (n < 1)
