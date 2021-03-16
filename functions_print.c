@@ -41,7 +41,7 @@ int print_string(va_list arguments_list)
  */
 int print_rev(va_list arguments_list)
 {
-  int i , a;
+  unsigned int i = 0 , a = 0;
 
 	char *str;
 
@@ -51,13 +51,12 @@ int print_rev(va_list arguments_list)
 	for (a = 0; str[a] != '\0'; a++)
 	{
 	}
-	a--;
 	for (i = 0; a > 0; i++)
 	  {
 	    _putchar(str[a - 1]);
 	    a--;
 	  }
-	return (a);
+	return (i);
 }
 /**
  * _porc - function that prints %
