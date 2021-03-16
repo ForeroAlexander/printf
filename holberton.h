@@ -26,4 +26,5 @@ int print_porc(va_list arguments_list);
 int print_digit(va_list arguments_list);
 int print_rev(va_list arguments_list);
 int print_bin(va_list arguments_list);
+int print_rot(va_list arguments_list);
 #endif
