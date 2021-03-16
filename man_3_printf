@@ -1,6 +1,6 @@
 .\" Manpage.
 .\" To correct errors or typs.
-.TH man 3 "15 march 20201" "Holberton School 0x11. C - _printf"
+.TH man 3 "15 march 2021" "Holberton School 0x11. C - _printf"
 
 .SH NAME
 _printf() - takes input and prints to standard output.
@@ -51,7 +51,7 @@ Prints the integer unsigned octal conversion.
 Unsigned hexadecimal conversion in lowercase form.
 
 .B %X
-Unsigned hexadecimal conversion uppercase  form.	
+Unsigned hexadecimal conversion uppercase form.
 
 .B %p
 Prints a memory address (Pointer).
@@ -69,10 +69,10 @@ int main(void)
     _printf("%s", String);
 
 
-   _printf("I am a character %s", 'A');
+   _printf("I am a character %c", 'A');
 
 
-   _printf("I am an integer %s", 12);
+   _printf("I am an integer %d", 12);
 
 
    _printf("I am percentage %%", %);
