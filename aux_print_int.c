@@ -15,7 +15,7 @@ int print_digit(va_list list)
 
 /**
  * aux - auxiliar recursive function
- * @arg: is an integer
+ * @arg: is an integer argument
  * Return: index
  */
 int aux(int arg)
