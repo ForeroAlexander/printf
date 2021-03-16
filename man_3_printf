@@ -12,28 +12,30 @@ int _printf(const char *format, ...);
 .PP
 .B int _printf(const char *format, ...);
 .PP
-.B int printnumberoctal(unsigned int n);
-.PP
 .B int _puts(char *str);
 .PP
 .B int _putchar(char c);
 .br
 .PP
-.B #include
+.B int printf_char(va_list arguments_list);
 .PP
-.B int printf_char(va_list args);
+.B int printf_string(va_list arguments_List);
 .PP
-.B int printf_string(va_list args);
+.B int printf_porc(va_list arguments_list)
 .PP
-.B int printf_int(va_list args);
+.B int printf_digit(va_list arguments_list);
 .PP
-.B int printf_dec(va_list args);
+.B int printf_rev(va_list arguments_list);
 .PP
-.B int printnumber(int n);
+.B int printf_bin(va_list arguments_list);
 .PP
-.B int printf_oct(va_list args);
+.B int printf_rot(va_list arguments_list);
 .PP
-.B int printf_percent(va_list args);
+.B int printf_uns(va_list arguments_list);
+.PP
+.B int printf_oct(va_list arguments_list);
+.PP
+.B int printf_hex(va_list arguments_list);
 .br
 .SH DESCRIPTION
 .br
