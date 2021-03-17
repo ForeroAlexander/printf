@@ -136,3 +136,40 @@ int print_heX(va_list arguments_list)
 	}
 	return (temp);
 }
+int print_add(va_list list)
+{
+  unsigned long int n = va_arg(list, unsigned long int);
+  int len = 0;
+  _putchar('0');
+  _putchar('x');
+  len += print_HEX(n);
+  len = len + 2;
+  return (len);
+}
+int print_HEX(unsigned long int n)
+{
+  unsigned int a[1024];
+  int i = 0, temp = 0;
+  char p;
+
+  if (n < 1)
+    {
+      write(1, "0", 1);
+      return (1);
+    }
+  for (i = 0; n > 0; i++, temp++)
+    {
+      a[temp] = n % 16;
+      n = n / 16;
+      if (a[temp] > 10)
+	a[i] = a[temp] + 39;
+      else
+	a[i] = a[temp];
+    }
+  for (i = temp - 1; i >= 0; i--)
+    {
+      p = a[i] + '0';
+      _putchar(p);
+    }
+  return (temp);
+}
