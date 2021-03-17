@@ -20,6 +20,8 @@ int (*get_func(char s))(va_list a)
 		{"o", print_oct},
 		{"x", print_hex},
 		{"X", print_heX},
+		{"u", print_uns},
+		{"p", print_add},
 		{NULL, NULL}
 	};
 
