@@ -18,7 +18,6 @@ typedef struct all
 
 int _putchar(char c);
 int aux(int arg);
-int auxt(int arg);
 int (*get_func(char s))(va_list a);
 int _printf(const char *format, ...);
 int print_char(va_list arguments_list);
@@ -32,7 +31,6 @@ int print_uns(va_list arguments_list);
 int print_oct(va_list arguments_list);
 int print_hex(va_list arguments_list);
 int print_heX(va_list arguments_list);
-int print_uns(va_list list);
 int print_add(va_list list);
 int print_HEX(unsigned long int n);
 #endif
